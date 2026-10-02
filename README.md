@@ -4,8 +4,7 @@ Aplicação web (JavaScript puro, HTML5, CSS3) que analisa roteiros de texto com
 valida locutor, emoção, tempo, cena e eventos embutidos e renderiza o resultado como caixas de diálogo.
 Entrada inválida bloqueia a execução e mostra a linha e o motivo do erro.
 
-- Repositório: **[PREENCHER: link definitivo do GitHub]**
-- Equipe: **[PREENCHER: nomes dos integrantes]**
+- Equipe: Everton Gustavo, Vitor Bismarck, Gabriel Cruz, Filipe César
 
 ## Como executar
 Sem instalação e sem dependências. Abra `index.html` no navegador (duplo clique) e clique em **Executar**.
