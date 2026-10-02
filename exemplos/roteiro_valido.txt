@@ -1,0 +1,7 @@
+#cena floresta_sombria
+Mago_Negro [neutro]: Você chegou tarde. {som:trovao}
+@espera 2s
+Aria [surpresa]: Como sabia que eu viria?
+@pausa 800ms
+Mago_Negro [raiva]: Pegue isto e fuja! {item:mapa}
+Aria: Obrigada... {efeito:tremor}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motor de Diálogos RPG</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Motor Interpretador de Diálogos</h1>
+  <main>
+    <section>
+      <label for="script">Roteiro</label>
+      <textarea id="script" spellcheck="false">#cena taverna_antiga
+Aria [feliz]: Bem-vindo, viajante! {som:sino}
+@espera 1s
+Kael [raiva]: Devolva a espada! {efeito:tremor}
+@pausa 500ms
+Aria [medo]: Calma... pegue esta {item:chave_de_ferro}.</textarea>
+      <div class="row"><button id="run">Executar</button><button id="clear" class="alt">Limpar</button></div>
+      <ul id="errors" hidden></ul>
+    </section>
+    <section>
+      <div id="scene">Cena: —</div>
+      <div id="stage"></div>
+    </section>
+  </main>
+  <script src="js/patterns.js" charset="UTF-8"></script>
+  <script src="js/parser.js" charset="UTF-8"></script>
+  <script src="js/ui.js" charset="UTF-8"></script>
+</body>
+</html>

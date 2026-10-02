@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>Testes - Motor de Diálogos</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#14121f;color:#eee;padding:1.5rem}
+table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #443;padding:.35rem .6rem;text-align:left;font-size:14px}
+code{background:#0d0b16;padding:.1rem .4rem;border-radius:4px}.ok{color:#4ade80}.fail{color:#f87171;font-weight:700}
+h3{margin:1.5rem 0 .3rem;color:#8b5cf6}
+</style></head><body>
+<h1>Testes</h1><p id="total"></p><div id="out"></div>
+<script src="../js/patterns.js" charset="UTF-8"></script><script src="../js/parser.js" charset="UTF-8"></script>
+<script src="cases.js"></script><script src="runner.js"></script>
+<script>
+const rows = RPG.Tests.run(), out = document.getElementById('out');
+let last = '', tb;
+rows.forEach(r => {
+  if (r.group !== last) {
+    last = r.group;
+    const h = document.createElement('h3'); h.textContent = r.group; out.appendChild(h);
+    if (r.src) { const c = document.createElement('code'); c.textContent = r.src; out.appendChild(c); }
+    const t = document.createElement('table'); t.innerHTML = '<tr><th>Resultado</th><th>Esperado</th><th>Cadeia</th></tr>';
+    out.appendChild(t); tb = t;
+  }
+  const tr = document.createElement('tr');
+  const cells = [r.pass ? 'OK' : 'FALHA', (r.expected ? 'aceita' : 'rejeita') + (r.limite ? ' (limite)' : ''), JSON.stringify(r.input)];
+  cells.forEach((v, i) => { const td = document.createElement('td'); td.textContent = v; if (i === 0) td.className = r.pass ? 'ok' : 'fail'; tr.appendChild(td); });
+  tb.appendChild(tr);
+});
+const f = rows.filter(r => !r.pass).length;
+document.getElementById('total').textContent = (rows.length - f) + '/' + rows.length + ' testes passaram';
+</script></body></html>

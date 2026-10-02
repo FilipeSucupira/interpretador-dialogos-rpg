@@ -1,0 +1,6 @@
+#cena Taverna
+Aria [alegre]: Olá!
+kael: oi
+@espera 05s
+Aria [feliz]:sem espaço
+Mago [medo]: Evento quebrado {som:}
